@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Hema ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ff4d6d,#ff85a2,#ffc2d1);
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:0;
+}
+
+.heart{
+    position:absolute;
+    color:white;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+from{transform:translateY(100vh) scale(1);opacity:1;}
+to{transform:translateY(-20vh) scale(2);opacity:0;}
+}
+
+.box{
+    z-index:2;
+    text-align:center;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+    padding:40px;
+    border-radius:20px;
+    color:white;
+    box-shadow:0 0 30px rgba(0,0,0,.3);
+    width:90%;
+    max-width:500px;
+}
+
+h1{
+font-family:'Dancing Script',cursive;
+font-size:55px;
+margin-bottom:10px;
+}
+
+p{
+margin:15px 0;
+line-height:1.8;
+}
+
+button{
+padding:14px 35px;
+font-size:18px;
+border:none;
+border-radius:50px;
+background:white;
+color:#ff3d6e;
+cursor:pointer;
+font-weight:bold;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+#surprise{
+display:none;
+animation:fade 2s;
+}
+
+@keyframes fade{
+from{opacity:0;transform:scale(.8);}
+to{opacity:1;transform:scale(1);}
+}
+
+img{
+width:180px;
+margin:20px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div id="hearts"></div>
+
+<div class="box">
+
+<div id="welcome">
+<h1>🎁 A Surprise For You</h1>
+
+<p>Someone special made something just for you... ❤️</p>
+
+<button onclick="openGift()">Open Surprise ❤️</button>
+
+</div>
+
+<div id="surprise">
+
+<h1>🎂 Happy Birthday Hema ❤️</h1>
+
+<img src="https://media.tenor.com/4xK8o6Vq7kQAAAAi/birthday-cake.gif">
+
+<p>
+
+May God bless you with endless happiness, success and beautiful memories.
+
+<br><br>
+
+Thank you for making life more beautiful.
+
+Keep smiling because your smile is my favorite notification. ❤️
+
+<br><br>
+
+I wish all your dreams come true.
+
+Happy Birthday once again, My Love. ❤️✨
+
+</p>
+
+</div>
+
+<audio id="music" loop>
+<source src="YOUR_MP3_LINK_HERE" type="audio/mpeg">
+</audio>
+
+</div>
+
+<script>
+
+function openGift(){
+
+document.getElementById("welcome").style.display="none";
+document.getElementById("surprise").style.display="block";
+
+document.getElementById("music").play();
+
+confetti();
+
+}
+
+function confetti(){
+
+for(let i=0;i<120;i++){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML=Math.random()>0.5?"❤️":"✨";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(20+Math.random()*25)+"px";
+
+h.style.animationDuration=(3+Math.random()*4)+"s";
+
+document.getElementById("hearts").appendChild(h);
+
+setTimeout(()=>h.remove(),7000);
+
+}
+
+}
+
+setInterval(()=>{
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(15+Math.random()*20)+"px";
+
+h.style.animationDuration=(5+Math.random()*3)+"s";
+
+document.getElementById("hearts").appendChild(h);
+
+setTimeout(()=>h.remove(),7000);
+
+},400);
+
+</script>
+
+</body>
+</html>
